@@ -55,7 +55,7 @@ export default {
 
   setup() {
     const youtubes = ref([]);
-    const search = ref("christoper");
+    const search = ref("day6");
 
     const SearchYoutubes = () => {
       fetch(
@@ -73,6 +73,7 @@ export default {
 
     return {
       youtubes,
+      search,
       SearchYoutubes,
     };
   },
@@ -129,17 +130,17 @@ export default {
     border: 2px solid var(--light_border);
     border-radius: 50px;
     color: #f0eeeb;
-    color: var(--light_bg);
+    color: var(--white);
     margin: 0 1% 5%;
     padding: 1rem 3rem 1rem 2rem;
     width: 98%;
   }
   button {
-    background: #fff;
+    background: var(--black);
     border: 0;
     border-radius: 50%;
-    color: var(—black);
-    font-family: var(—subKor_font);
+    color: var(--black);
+    font-family: var(--subKor_font);
     font-size: 12px;
     height: 40px;
     position: absolute;
