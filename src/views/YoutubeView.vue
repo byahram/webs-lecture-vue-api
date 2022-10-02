@@ -1,24 +1,24 @@
 <template>
   <HeaderCont />
   <TitleCont name1="youtube" name2="Api" />
-  <div className="youtube__cont">
-    <div className="container">
-      <div className="youtube__inner">
+  <div class="youtube__cont">
+    <div class="container">
+      <div class="youtube__inner">
         <div class="youtube__search">
           <form @submit.prevent="SearchYoutubes()">
-            <div>
-              <label for="search">검색하기</label>
+            <div class="container">
+              <h2>검색하기</h2>
               <input
                 type="search"
                 id="search"
-                placeholder="검색하세요"
+                placeholder="검색하세요."
                 v-model="search"
               />
               <button type="submit">검색</button>
             </div>
           </form>
         </div>
-        <div className="youtube__list">
+        <div class="youtube__list">
           <ul>
             <li v-for="youtube in youtubes" :key="youtube.id.videoId">
               <a href="">
@@ -80,7 +80,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .youtube__cont {
   background-color: var(--black);
 }
@@ -136,7 +136,7 @@ export default {
     width: 98%;
   }
   button {
-    background: var(--black);
+    background: var(--white);
     border: 0;
     border-radius: 50%;
     color: var(--black);
@@ -157,10 +157,10 @@ export default {
   }
 }
 
-/* // 애니메이션
- .youtube__search,
- .youtube__list {
-   opacity: 0;
-   transform: translateY(100px);
- } */
+// 애니메이션
+// .youtube__search,
+// .youtube__list {
+//   opacity: 0;
+//   transform: translateY(100px);
+// }
 </style>

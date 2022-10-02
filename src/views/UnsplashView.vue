@@ -5,32 +5,36 @@
     <div className="container">
       <div class="unsplash__search">
         <form @submit.prevent="SearchImages()">
-          <div>
-            <label for="search">검색하기</label>
-            <input
-              type="search"
-              id="search"
-              placeholder="검색하세요"
-              v-model="search"
-            />
-            <button type="submit">검색</button>
+          <div class="container">
+            <div>
+              <h2>검색하기</h2>
+              <input
+                type="search"
+                id="search"
+                placeholder="검색하세요"
+                v-model="search"
+              />
+              <button type="submit">검색</button>
+            </div>
           </div>
         </form>
       </div>
-      <div className="unsplash__inner">
-        <figure
-          className="gallery__item"
-          v-for="image in images"
-          :key="image.id"
-        >
-          <a :href="`https://unsplash.com/photos/${image.id}`">
-            <img
-              :src="image.urls.thumb"
-              :alt="image.title"
-              className="gallery__img"
-            />
-          </a>
-        </figure>
+      <div className="unsplash__list">
+        <ul>
+          <li
+            className="unsplash__item"
+            v-for="image in images"
+            :key="image.id"
+          >
+            <a :href="`https://unsplash.com/photos/${image.id}`">
+              <img
+                :src="image.urls.thumb"
+                :alt="image.title"
+                className="unsplash__img"
+              />
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -80,16 +84,16 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .unsplash__cont {
   background-color: var(--black);
 }
-.unsplash__inner {
+.unsplash__list {
   width: 100%;
   columns: 4;
   column-gap: 20px;
 }
-.gallery__img {
+.unsplash__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -125,7 +129,7 @@ export default {
     width: 98%;
   }
   button {
-    background: #fff;
+    background: var(--white);
     border: 0;
     border-radius: 50%;
     color: var(--black);
@@ -139,17 +143,4 @@ export default {
     width: 40px;
   }
 }
-
-@media (max-width: 800px) {
-  .unsplash__list ul li {
-    flex: 1 1 43%;
-  }
-}
-
-// 애니메이션
-// .unsplash__search,
-// .unsplash__list {
-//     opacity: 0;
-//     transform: translateY(100px);
-// }
 </style>

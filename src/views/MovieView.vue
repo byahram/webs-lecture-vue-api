@@ -1,12 +1,12 @@
 <template>
   <HeaderCont />
   <TitleCont name1="movie" name2="Api" />
-  <div className="movie__cont">
-    <div className="container">
-      <div class="youtube__search">
+  <div class="movie__cont">
+    <div class="container">
+      <div class="movie__search">
         <form @submit.prevent="SearchMovies()">
-          <div>
-            <label for="search">검색하기</label>
+          <div class="container">
+            <h2>검색하기</h2>
             <input
               type="search"
               id="search"
@@ -17,7 +17,7 @@
           </div>
         </form>
       </div>
-      <div className="movie__list">
+      <div class="movie__list">
         <ul>
           <li v-for="movie in movies" :key="movie.id">
             <a :href="`https://www.themoviedb.org/movie/${movie.id}`">
@@ -78,7 +78,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .movie__cont {
   background-color: var(--black);
 }
@@ -135,7 +135,7 @@ export default {
     width: 98%;
   }
   button {
-    background: var(--black);
+    background: var(--white);
     border: 0;
     border-radius: 50%;
     color: var(--black);

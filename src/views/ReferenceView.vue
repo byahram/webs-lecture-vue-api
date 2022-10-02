@@ -65,7 +65,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .refer__cont {
   background-color: var(--black);
   min-height: 100vh;
