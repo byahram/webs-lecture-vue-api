@@ -1,5 +1,7 @@
 # webs-lecture-vue-api
 
+[view my work](https://webs-lecture-vue-api.netlify.app)
+
 ## Project setup
 ```
 npm install
